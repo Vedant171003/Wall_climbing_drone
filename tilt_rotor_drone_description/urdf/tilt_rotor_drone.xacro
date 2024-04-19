@@ -1,0 +1,275 @@
+<?xml version="1.0" ?>
+<robot name="tilt_rotor_drone" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find tilt_rotor_drone_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find tilt_rotor_drone_description)/urdf/tilt_rotor_drone.trans" />
+<xacro:include filename="$(find tilt_rotor_drone_description)/urdf/tilt_rotor_drone.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.0 0.0 0.08" rpy="0 0 0"/>
+    <mass value="4.486183340738176"/>
+    <inertia ixx="0.009485" iyy="0.037554" izz="0.043416" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find tilt_rotor_drone_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find tilt_rotor_drone_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_1">
+  <inertial>
+    <origin xyz="0.034658466570421015 1.102165422458351e-14 0.015" rpy="0 0 0"/>
+    <mass value="0.16859383382811585"/>
+    <inertia ixx="6.3e-05" iyy="4.9e-05" izz="8.6e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.165 -0.0 -0.115" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find tilt_rotor_drone_description)/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.165 -0.0 -0.115" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find tilt_rotor_drone_description)/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_right_edf__1">
+  <inertial>
+    <origin xyz="0.00025059616387235195 0.034914939342453516 -0.014945536013250452" rpy="0 0 0"/>
+    <mass value="0.07039346308248161"/>
+    <inertia ixx="5e-05" iyy="4.7e-05" izz="4.6e-05" ixy="0.0" iyz="-1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.142989 -0.1 -0.08" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find tilt_rotor_drone_description)/meshes/front_right_edf__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.142989 -0.1 -0.08" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find tilt_rotor_drone_description)/meshes/front_right_edf__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_left_edf_1">
+  <inertial>
+    <origin xyz="0.00025059616387249073 -0.03491493934245349 -0.01494553601325048" rpy="0 0 0"/>
+    <mass value="0.07039346308248164"/>
+    <inertia ixx="5e-05" iyy="4.7e-05" izz="4.6e-05" ixy="-0.0" iyz="1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.142989 0.1 -0.08" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find tilt_rotor_drone_description)/meshes/front_left_edf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.142989 0.1 -0.08" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find tilt_rotor_drone_description)/meshes/front_left_edf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rear_left_edf__1">
+  <inertial>
+    <origin xyz="-0.0002505961257860678 -0.03491486069246366 -0.014945587640810665" rpy="0 0 0"/>
+    <mass value="0.07039321991755289"/>
+    <inertia ixx="5e-05" iyy="4.7e-05" izz="4.6e-05" ixy="0.0" iyz="1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.142989 0.1 -0.08" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find tilt_rotor_drone_description)/meshes/rear_left_edf__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.142989 0.1 -0.08" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find tilt_rotor_drone_description)/meshes/rear_left_edf__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rear_right_edf__1">
+  <inertial>
+    <origin xyz="-0.00025059612578604007 0.03491486069246369 -0.014945587640810679" rpy="0 0 0"/>
+    <mass value="0.07039321991755285"/>
+    <inertia ixx="5e-05" iyy="4.7e-05" izz="4.6e-05" ixy="-0.0" iyz="-1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.142989 -0.1 -0.08" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find tilt_rotor_drone_description)/meshes/rear_right_edf__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.142989 -0.1 -0.08" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find tilt_rotor_drone_description)/meshes/rear_right_edf__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rear_right_wheel__1">
+  <inertial>
+    <origin xyz="1.942890293094024e-16 0.007500000000000007 1.942890293094024e-16" rpy="0 0 0"/>
+    <mass value="0.28048139211249673"/>
+    <inertia ixx="0.000454" iyy="0.000898" izz="0.000454" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.142989 -0.174 -0.08" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find tilt_rotor_drone_description)/meshes/rear_right_wheel__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.142989 -0.174 -0.08" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find tilt_rotor_drone_description)/meshes/rear_right_wheel__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rear_left_wheel__1">
+  <inertial>
+    <origin xyz="0.0 -0.007499999999999951 1.3877787807814457e-17" rpy="0 0 0"/>
+    <mass value="0.2804813921124967"/>
+    <inertia ixx="0.000454" iyy="0.000898" izz="0.000454" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.142989 0.174 -0.08" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find tilt_rotor_drone_description)/meshes/rear_left_wheel__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.142989 0.174 -0.08" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find tilt_rotor_drone_description)/meshes/rear_left_wheel__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_left_wheel_1">
+  <inertial>
+    <origin xyz="0.0 -0.007500000000000007 5.551115123125783e-17" rpy="0 0 0"/>
+    <mass value="0.2804813921124967"/>
+    <inertia ixx="0.000454" iyy="0.000898" izz="0.000454" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.142989 0.174 -0.08" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find tilt_rotor_drone_description)/meshes/front_left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.142989 0.174 -0.08" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find tilt_rotor_drone_description)/meshes/front_left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_right_wheel__1">
+  <inertial>
+    <origin xyz="1.942890293094024e-16 0.007500000000000007 1.942890293094024e-16" rpy="0 0 0"/>
+    <mass value="0.28048139211249673"/>
+    <inertia ixx="0.000454" iyy="0.000898" izz="0.000454" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.142989 -0.174 -0.08" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find tilt_rotor_drone_description)/meshes/front_right_wheel__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.142989 -0.174 -0.08" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find tilt_rotor_drone_description)/meshes/front_right_wheel__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="camera_joint" type="fixed">
+  <origin xyz="-0.165 0.0 0.115" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="camera_1"/>
+</joint>
+
+<joint name="front_right_edf_joint" type="fixed">
+  <origin xyz="-0.142989 0.1 0.08" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="front_right_edf__1"/>
+</joint>
+
+<joint name="front_left_edf_joint" type="fixed">
+  <origin xyz="-0.142989 -0.1 0.08" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="front_left_edf_1"/>
+</joint>
+
+<joint name="rear_left_edf_joint" type="fixed">
+  <origin xyz="0.142989 -0.1 0.08" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rear_left_edf__1"/>
+</joint>
+
+<joint name="rear_right_edf_joint" type="fixed">
+  <origin xyz="0.142989 0.1 0.08" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rear_right_edf__1"/>
+</joint>
+
+<joint name="rear_right_wheel_joint" type="continuous">
+  <origin xyz="0.0 0.074 0.0" rpy="0 0 0"/>
+  <parent link="rear_right_edf__1"/>
+  <child link="rear_right_wheel__1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="rear_left_wheel_joint" type="continuous">
+  <origin xyz="0.0 -0.074 0.0" rpy="0 0 0"/>
+  <parent link="rear_left_edf__1"/>
+  <child link="rear_left_wheel__1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+<joint name="front_left_wheel_joint" type="continuous">
+  <origin xyz="0.0 -0.074 0.0" rpy="0 0 0"/>
+  <parent link="front_left_edf_1"/>
+  <child link="front_left_wheel_1"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="front_right_wheel_joint" type="continuous">
+  <origin xyz="0.0 0.074 0.0" rpy="0 0 0"/>
+  <parent link="front_right_edf__1"/>
+  <child link="front_right_wheel__1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+</robot>
